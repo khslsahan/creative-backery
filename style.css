@@ -1,0 +1,239 @@
+
+
+                                                                    /* `======================================`
+                                                                        The html main elements ccs styles
+                                                                    ============================================ */
+                                                                    /*
+                                                                    ==========================================
+                                                                                  start
+                                                                    ========================================== */
+
+body
+{
+  background-color:#f6e58d;
+
+}
+h1
+{
+  text-align: center;
+}
+
+h2
+{
+  margin: 10px 0;
+  font-size: 16px;
+  color: gray;
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
+ul
+{
+  list-style: none;
+  color: #fff;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+}
+ul a
+{
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  transition: 0.3s;
+}
+ul a:hover
+{
+  color: #ff9800;
+}
+ul li
+{
+  margin: 10px 0;
+  height: 30px;
+}
+li i
+{
+  margin-right: 20px;
+}
+
+
+
+                                                                          /*
+                                                                                  ==========================================
+                                                                                                end = html main elements
+                                                                                  ========================================== */
+
+
+
+                                                                                              /*
+                                                                                              ========================
+                                                                                              header.php styles :start
+                                                                                              ======================== */
+.header
+{
+  padding:10px 20px;
+}
+
+.signin-up
+{
+  float:right;
+  margin:0px;
+}
+
+
+
+                                                                                              /*
+                                                                                            ========================
+                                                                                              header.php styles :end
+                                                                                              ======================== */
+                                                                                          /*
+                                                                                          ====================================
+                                                                                          map style in: main.php and about.php
+                                                                                          ==================================== */
+
+.map
+{
+  margin:20px;
+}
+
+
+                                                                          /*
+                                                                          ====================================
+                                                                          map style in: main.php and about.php ------>end
+                                                                          ==================================== */
+                                                                /*
+                                                                ==========================================
+                                                                              start :footer styls
+                                                                ========================================== */
+
+
+
+.footer
+{
+  width: 100%;
+  background-color: #130f40;
+  display:block;
+}
+.inner-footer
+{
+  width:95%;
+  padding: 30px 10px;
+  margin: auto;
+  flex-wrap: wrap;;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.footer-items
+{
+  width: 25%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.footer-items p
+{
+  font-size: 16px;
+  color:gray;
+  text-align: justify;
+  line-height: 25px;
+}
+
+
+
+
+
+.border-footer
+{
+  height: 2px;
+  width: 40px;
+  background:#ff9800;
+}
+.socialmedia
+{
+  width: 100%;
+  color: #fff;
+  text-align: center;
+}
+.socialmedia a
+{
+  text-decoration: none;
+}
+.socialmedia i
+{
+  height: 40px;
+  width: 40px;
+  margin: 20px 5px;
+  padding: 10px;
+  color: #fff;
+  border-radius: 50%;
+  border: 1px solid gray;
+}
+.socialmedia i:hover
+{
+  background: gray;
+}
+.footer-bottom
+{
+  padding: 10px;
+  background: #3d545f;
+  color: #fff;
+  font-size: 12px;
+}
+@media screen and (max-width:600px)
+{
+.footer-items
+  {
+  width: 100%;
+  }
+}
+
+
+                                                                /*
+                                                                ==========================================
+                                                                              end :footer styls
+                                                                ========================================== */
+
+
+.box-login
+{
+  border:2px solid #2493d3;
+  text-align:center;
+  size:col-md-3 mb-3;
+  padding:50px;
+}
+.box-signup
+{
+  border:2px solid #2493d3;
+  text-align:center;
+  size:col-md-3 mb-3;
+  padding:50px;
+}
+                                                          /*
+                                                                  ==========================================
+                                                                                end :footer styls
+                                                                  ========================================== */
+
+
+
+                                                                          /*
+                                                                          =============================
+                                                                          apout.php :stylesheet -start
+                                                                          ============================= */
+
+.map .about
+{
+  margin:20px;
+}
+
+
+
+                                                                          /*
+                                                                          =============================
+                                                                          apout.php :stylesheet -end
+                                                                          ============================= */
+.box-Items
+{
+  border:2px solid #2493d3;
+  size:col-md-3 mb-3;
+  padding:50px;
+}
