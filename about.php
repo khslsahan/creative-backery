@@ -2,7 +2,7 @@
 
 	<?php
     include('top_header.php');
-    echo " <title>About Us</title>";
+    echo " <title>about Us</title>";
     include('header.php');
    ?>
 	<center>
