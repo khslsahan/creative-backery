@@ -23,11 +23,19 @@
           View
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+        
           <a class="dropdown-item" href="product.php">View Products</a>
+          
+       
+
+
           <a class="dropdown-item" href="outlets.php">View Outlets</a>
           <?php if(isset($_SESSION['login']) && ($_SESSION['role']=='admin')){  ?>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="user_details.php">View Users</a>
+          <a class="dropdown-item" href="admin_orders_panel.php">Customer Orders</a>
+          
         </div>
       <?php } ?>
       </li>

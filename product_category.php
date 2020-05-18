@@ -6,7 +6,16 @@
 ?>
 
 <?php
-  if(isset($_GET['action'])&& $_GET['action'] =="add" ){
+
+if(!$_GET['cid']){
+        
+    echo "<script language='javascript'>
+    document.location='product.php';
+    </script>";
+    }
+
+
+  if(isset($_GET['action'])&& $_GET['action'] ="add" ){
      $id = intval($_GET['id']);
      if(isset($_SESSION['cart'][$id])){
        $_SESSION['cart'][$id]['quantity']++;
@@ -30,63 +39,35 @@
        }
      }
   }
- ?>
 
- 
-<?php
-  if(isset($_GET['action'])&& $_GET['action'] =="fav" ){
-     $id = intval($_GET['id']);
-     
-     if(isset($_SESSION['uid'])){
-      $uidd = intval($_SESSION['uid']);
-      $presql = "SELECT * FROM `wishlist` WHERE `user_id` = $uidd AND `product_id` = $id";
-      $preres = mysqli_query($conn,$presql);
-      if(!mysqli_num_rows($preres)){
-        $sql = "INSERT INTO `wishlist`( `user_id`, `product_id`) VALUES ($uidd ,$id)";
-        $res = mysqli_query($conn,$sql);
-        if(!$res){
-          die("Error in conection to products".mysqli_error($conn));
-        }
-        
-      } 
-     }else {
-      echo "<script language='javascript'>
-      document.location='Login.php';
-      </script>"; 
-     }
-  }
  ?>
- 
-  
-
 <center>
+     
     <div class="container-fluid " >
       <div class="col-md-9">
         <div class=" col-md-7   col-sm-12">
               <img src="images\our-products.jpg" alt="" width="100%" height="100%">
         </div>
+               <div class="alert alert-primary" role="alert" style="height:40px">
+               <h5 class="">
+               <?php 
+               $cid = intval($_GET['cid']);
+               $sql="SELECT * FROM `category` WHERE `id`=$cid ";
+               $res = mysqli_query($conn,$sql);
+               if(!$res){
+                   die("Error in the Cotegory ".mysqli_error($conn));
+               }
+                $rowc= mysqli_fetch_assoc($res);
 
-        <?php
-        $productid =0;
-          $sqlp = "SELECT * FROM `category` ";
-          $resp=mysqli_query($conn,$sqlp);
-          if(!$resp){
-            die("Error in category".mysqli_error($conn));
-          }
-          while($rowp = mysqli_fetch_assoc($resp)){ 
-              $productid = intval($rowp['id']);
-               ?>
-              <a style="text-decoration:none" href="product_category.php?cid=<?php echo $productid ;?>"> <div class="alert alert-primary" role="alert" style="height:40px">
-               <h5 class=""><?php echo $rowp['category_name'];?><h5>
-            </div>  
-            </a>
+               echo $rowc['category_name'];?><h5>
+</div>  
 
              
 
 
     <div class="row" align="center">
       <?php
-          $sql = "SELECT   * FROM `products` WHERE `category_id` = $productid  LIMIT 3 ";
+          $sql = "SELECT * FROM `products` WHERE `category_id` = $cid";
           $res=mysqli_query($conn,$sql);
           if(!$res){
             die("Error in image".mysqli_error($conn));
@@ -107,12 +88,12 @@
             </div>
             <div class="row">
                <a style="width:50%" href="product.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary" type="submit"><i class="icon fa fa-shopping-cart" style="margin-right:10px;"></i>Add to Cart</a>
-              <a style="width:50%" href="product.php?page=product&action=fav&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary" type="submit"><i class="icon fa fa-heart-o" style="margin-right:10px;"></i>Favorits</a>
+              <a style="width:50%"  href="product.php?page=product&action=fav&id=<?php echo $row['id']; ?>" class="lnk btn btn-primary" type="submit"><i class="icon fa fa-heart-o" style="margin-right:10px;"></i>Favorits</a>
             </div>
            </div>
       </div>
-    </div>
-      <?php } ?>
+     
+       
 </div>
 
 

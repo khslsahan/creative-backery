@@ -42,7 +42,7 @@
       <td><?php echo "".$row['address']; ?></td>
       <td><?php echo "".$row['role']; ?></td>
       <td>Online</td>
-      <td><button class="btn btn-primary"type="button" name="button">update</button></td>
+      <td><a href="admin_uptade_customer.php?cid=<?php echo "".$row['id']; ?>"> <button class="btn btn-primary"type="button" name="button" >update</button></a></td>
     </tr>
   <?php } ?>
   </tbody>
